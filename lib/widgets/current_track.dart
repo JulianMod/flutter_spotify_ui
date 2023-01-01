@@ -17,9 +17,10 @@ class CurrentTrack extends StatelessWidget {
           children: [
             _TrackInfo(),
             Spacer(),
-            PlayerControls(),
+            _PlayerControls(),
             Spacer(),
-            MoreControls()
+            if (MediaQuery.of(context).size.width > 800)
+            _MoreControls()
           ],
         ),
       ),
@@ -73,8 +74,8 @@ class _TrackInfo extends StatelessWidget {
   }
 }
 
-class PlayerControls extends StatelessWidget {
-  const PlayerControls({Key? key}) : super(key: key);
+class _PlayerControls extends StatelessWidget {
+  const _PlayerControls({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -141,8 +142,8 @@ class PlayerControls extends StatelessWidget {
   }
 }
 
-class MoreControls extends StatelessWidget {
-  const MoreControls({Key? key}) : super(key: key);
+class _MoreControls extends StatelessWidget {
+  const _MoreControls({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
